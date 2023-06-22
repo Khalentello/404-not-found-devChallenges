@@ -34,7 +34,11 @@
 
 ## Overview
 
+Desktop Screen
+
 ![screenshot](./assets/screenshots/desktop-page.png)
+
+Mobile Screen 
 
 ![screenshot](./assets/screenshots/mobile-page.png)
 
