@@ -5,6 +5,9 @@ font-family: 'Space Mono', monospace; */
   --gray-1: #333;
   --gray-2: #4f4f4f;
   --white: #fff;
+  --lg: 6.4rem;
+  --md: 2.4rem;
+  --sm: 1.4rem;
 }
 * {
   box-sizing: border-box;
@@ -26,8 +29,9 @@ body {
   padding-left: 5vw;
 }
 .headerContainer p {
+  height: 10%;
   font-family: "Inconsolata", monospace;
-  font-size: 2.4rem;
+  font-size: var(--md);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -1.92px;
@@ -35,9 +39,20 @@ body {
 .mainContainer {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
   align-items: center;
+  height: 80%;
+}
+.imageContainer {
+  width: 75%;
+  margin: 0 auto;
+  align-self: center;
 }
 
+.imageContainer img {
+  width: 100%;
+  object-fit: cover;
+}
 .rightContainer {
   display: flex;
   flex-direction: column;
@@ -48,42 +63,88 @@ body {
   color: var(--gray-1, #333);
   font-weight: 700;
   letter-spacing: -0.224rem;
-  font-size: 6.4rem;
+  font-size: var(--lg);
   margin-right: 8vw;
+  margin-bottom: 3.6rem;
 }
 .description {
   color: var(--gray-2, #4f4f4f);
-  font-size: 2.4rem;
+  font-size: var(--md);
   letter-spacing: -0.084rem;
-  margin-right: 22vw;
+  margin-right: 24vw;
+  margin-bottom: 6.4rem;
 }
 .backHomepageButton {
   background: var(--gray-1, #333);
   color: #fff;
-  font-size: 1.4rem;
+  font-size: var(--sm);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: -0.049rem;
   white-space: nowrap;
-  padding: 4.3px 2.3px;
+  width: min-content;
+  padding: 4% 6%;
 }
 
 .footerContainer {
-  position: fixed;
+  position: absolute;
   bottom: 2%;
   width: 100%;
   text-align: center;
+  cursor: default;
 }
 .footerText {
   text-justify: center;
   color: #bdbdbd;
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: var(--sm);
   font-weight: 500;
 }
 .boldFooter {
   font-weight: 700;
   text-decoration-style: solid;
-
+  cursor: pointer;
   text-decoration: underline;
+  color: #bdbdbd;
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --lg: 4.8rem;
+    --md: 2.4rem;
+    --sm: 1.4rem;
+  }
+
+  .mainContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+  }
+
+  .title {
+    margin: 0;
+    margin-left: 6%;
+    text-align: left;
+    margin-bottom: 8%;
+  }
+  .description {
+    text-align: left;
+    margin: 0 6%;
+    margin-bottom: 18%;
+    font-size: 1.8rem;
+  }
+  .backHomepageButton {
+    padding: 6.5% 11.5%;
+    margin-left: 6.5%;
+  }
+}
+@media screen and (min-width: 1441px) {
+  :root {
+    --lg: 9.4rem;
+    --md: 4.4rem;
+    --sm: 3.4rem;
+  }
 }
