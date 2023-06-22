@@ -84,6 +84,7 @@ body {
   white-space: nowrap;
   width: min-content;
   padding: 4% 6%;
+  border-radius: 8px;
 }
 
 .footerContainer {
